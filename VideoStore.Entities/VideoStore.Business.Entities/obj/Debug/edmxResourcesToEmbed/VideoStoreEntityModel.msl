@@ -159,7 +159,7 @@
         <ScalarProperty Name="Id" ColumnName="Users_Id" />
       </EndProperty>
       <EndProperty Name="Media">
-        <ScalarProperty Name="Id" ColumnName="Media_Id" />
+        <ScalarProperty Name="Id" ColumnName="Medium_Id" />
       </EndProperty>
     </AssociationSetMapping>
     <AssociationSetMapping Name="LikeMatchingMedia" TypeName="VideoStoreEntityModel.LikeMatchingMedia" StoreEntitySet="LikeMatchings">

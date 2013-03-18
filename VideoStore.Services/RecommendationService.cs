@@ -2,15 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using VideoStore.Business.Components;
+using VideoStore.Services.Interfaces;
 using VideoStore.Business.Entities;
 using VideoStore.Business.Components.Interfaces;
 
 namespace VideoStore.Services
 {
-    class RecommendationService
+    class RecommendationService : IRecommendationService
     {
-
         private IRecommendationProvider RecommendationProvider
         {
             get
@@ -19,12 +18,14 @@ namespace VideoStore.Services
             }
         }
 
-        public void UserLikeMedia(int pUserId, int pMediaId) {
+        public void UserLikeMedia(int pUserId, int pMediaId)
+        {
             this.RecommendationProvider.UserLikeAnMedia(pUserId, pMediaId);
         }
 
-        List<Media> GetRecommendationListByUserId(int UserId) {
-            return null;
+        public List<Media> GetRecommendationListByUserId(int UserId)
+        {
+            return this.RecommendationProvider.GetRecommendationListByUserId(UserId);
         }
     }
 }

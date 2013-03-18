@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -44,8 +45,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ICatalogueService.cs" />
-    <Compile Include="IRecommendationService.cs" />
     <Compile Include="IRoleService.cs" />
+    <Compile Include="IRecommendationService.cs" />
     <Compile Include="IUserService.cs" />
     <Compile Include="IOrderService.cs" />
     <Compile Include="IStockService.cs" />
@@ -59,6 +60,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

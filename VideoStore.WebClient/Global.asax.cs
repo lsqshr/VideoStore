@@ -11,7 +11,6 @@ using Microsoft.Practices.Unity.ServiceLocatorAdapter;
 using Microsoft.Practices.ServiceLocation;
 using VideoStore.WebClient.ViewModels;
 using VideoStore.Business.Entities;
-using VideoStore.WebClient.ViewModels;
 
 namespace VideoStore.WebClient
 {

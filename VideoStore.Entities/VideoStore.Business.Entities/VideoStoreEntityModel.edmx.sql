@@ -111,7 +111,7 @@ CREATE TABLE [dbo].[Users] (
     [Name] nvarchar(max)  NOT NULL,
     [Address] nvarchar(max)  NOT NULL,
     [Email] nvarchar(max)  NOT NULL,
-    [Revision] varbinary(max)  NOT NULL,
+    [Revision] timestamp NOT NULL,
     [LoginCredential_Id] int  NOT NULL
 );
 GO

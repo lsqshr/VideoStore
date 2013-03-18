@@ -32,6 +32,7 @@ namespace VideoStore.Process
         {
             InsertCatalogueEntities();
             CreateOperator();
+            CreateDummyUsers(10);
         }
 
         private static void InsertCatalogueEntities()
@@ -136,6 +137,33 @@ namespace VideoStore.Process
             ServiceLocator.Current.GetInstance<IUserProvider>().CreateUser(lOperator);
         }
 
+        private static void CreateDummyUsers(int NumOfUsers)
+        {
+            Role lDummyRole = new Role() { Name = "User" };
+            using (VideoStoreEntityModelContainer lContainer = new VideoStoreEntityModelContainer())
+            {
+                if (lContainer.Users.Count() > NumOfUsers + 1)
+                {
+                    return;
+                }
+            }
+            for (int i = 0; i < NumOfUsers; i++ )
+            {
+                
+                User pUser = new User()
+                {
+                    Name = lDummyRole.Name + i.ToString(),
+                    LoginCredential = new LoginCredential() { UserName = lDummyRole.Name + i.ToString(), Password = "111111" },
+                    Email = lDummyRole.Name + i.ToString() + "@Dummy.com",
+                    Address = "1 Central Park"
+                };
+
+                pUser.Roles.Add(lDummyRole);
+
+                ServiceLocator.Current.GetInstance<IUserProvider>().CreateUser(pUser);
+            }
+        }
+
         private static void ResolveDependencies()
         {
 
@@ -180,5 +208,6 @@ namespace VideoStore.Process
         {
             return String.Format("{0}, {1}", pServiceName, System.Configuration.ConfigurationManager.AppSettings["ServiceAssemblyName"].ToString());
         }
+
     }
 }

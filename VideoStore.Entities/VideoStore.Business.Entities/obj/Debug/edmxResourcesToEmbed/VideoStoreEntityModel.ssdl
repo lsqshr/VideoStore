@@ -176,10 +176,10 @@
   <EntityType Name="UserMedia">
     <Key>
       <PropertyRef Name="Users_Id" />
-      <PropertyRef Name="Media_Id" />
+      <PropertyRef Name="Medium_Id" />
     </Key>
     <Property Name="Users_Id" Type="int" Nullable="false" />
-    <Property Name="Media_Id" Type="int" Nullable="false" />
+    <Property Name="Medium_Id" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="DeliveryOrder">
     <End Role="Delivery" Type="VideoStoreEntityModel.Store.Deliveries" Multiplicity="0..1" />
@@ -345,7 +345,7 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="UserMedia">
-        <PropertyRef Name="Media_Id" />
+        <PropertyRef Name="Medium_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

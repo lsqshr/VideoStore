@@ -139,6 +139,7 @@
     <Compile Include="Controllers\AdministrationController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RecommendationController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="CustomRole\CustomRoleProvider.cs" />
     <Compile Include="Global.asax.cs">
@@ -171,6 +172,7 @@
     </Compile>
     <Compile Include="ViewModels\CatalogueViewModel.cs" />
     <Compile Include="ViewModels\CustomerViewModel.cs" />
+    <Compile Include="ViewModels\RecommendationViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -230,6 +232,7 @@
     <Content Include="Views\Cart\CheckOut.aspx" />
     <Content Include="Views\Cart\Index.aspx" />
     <Content Include="Views\Cart\Summary.ascx" />
+    <Content Include="Views\Recommendation\Index.aspx" />
     <Content Include="Views\Store\ListMedia.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
