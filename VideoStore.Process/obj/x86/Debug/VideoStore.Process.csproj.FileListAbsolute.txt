@@ -142,20 +142,18 @@ C:\Users\Matt\Desktop\VideoStoreWithRolesS12012(2)\VideoStoreWithRolesS12012\Vid
 C:\Users\Matt\Desktop\VideoStoreWithRolesS12012(2)\VideoStoreWithRolesS12012\VideoStore.Process\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Matt\Desktop\VideoStoreWithRolesS12012(2)\VideoStoreWithRolesS12012\VideoStore.Process\obj\x86\Debug\VideoStore.Process.exe
 C:\Users\Matt\Desktop\VideoStoreWithRolesS12012(2)\VideoStoreWithRolesS12012\VideoStore.Process\obj\x86\Debug\VideoStore.Process.pdb
-C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.Process\bin\Debug\VideoStore.Process.exe.config
 C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.Process\bin\Debug\VideoStore.Process.exe
-C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.Process\bin\Debug\VideoStore.Process.pdb
 C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.Process\bin\Debug\Microsoft.Practices.ObjectBuilder2.dll
 C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.Process\bin\Debug\Microsoft.Practices.ServiceLocation.dll
 C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.Process\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
 C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.Process\bin\Debug\Microsoft.Practices.Unity.dll
 C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.Process\bin\Debug\Microsoft.Practices.Unity.ServiceLocatorAdapter.dll
-C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.Process\bin\Debug\Microsoft.Practices.Unity.StaticFactory.dll
 C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.Process\bin\Debug\VideoStore.Business.Components.dll
 C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.Process\bin\Debug\VideoStore.Business.Components.Interfaces.dll
 C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.Process\bin\Debug\VideoStore.Business.Entities.dll
 C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.Process\bin\Debug\VideoStore.Services.dll
 C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.Process\bin\Debug\VideoStore.Services.Interfaces.dll
+C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.Process\bin\Debug\Microsoft.Practices.Unity.StaticFactory.dll
 C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.Process\bin\Debug\Common.dll
 C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.Process\bin\Debug\VideoStore.Business.Components.Interfaces.pdb
 C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.Process\bin\Debug\VideoStore.Business.Components.pdb
@@ -166,3 +164,5 @@ C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.Process\bin\Debug\
 C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.Process\obj\x86\Debug\VideoStore.Process.csprojResolveAssemblyReference.cache
 C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.Process\obj\x86\Debug\VideoStore.Process.exe
 C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.Process\obj\x86\Debug\VideoStore.Process.pdb
+C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.Process\bin\Debug\VideoStore.Process.exe.config
+C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.Process\bin\Debug\VideoStore.Process.pdb

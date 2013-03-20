@@ -14,6 +14,6 @@ namespace VideoStore.Business.Components.Interfaces
         void UpdateRecommendation(Recommendation pRecommendation);
         void DeleteRecommendation(Recommendation pRecommendation);
         void UserLikeAnMedia( int pUserId, int pMediaId );
-        List<Media> GetRecommendationListByUserId(int UserId);
+        List<Recommendation> GetRecommendationListByUserId(int UserId);
     }
 }

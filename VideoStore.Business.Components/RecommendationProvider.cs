@@ -59,7 +59,6 @@ namespace VideoStore.Business.Components
             }
         }
 
-        //TODO; not sure if it works
         public void UserLikeAnMedia(int pUserId, int pMediaId) {
 
             if (pUserId == null || pMediaId == null) {
@@ -176,33 +175,33 @@ namespace VideoStore.Business.Components
             }
         }
 
-        //TODO: not sure if it works
-        public List<Media> GetRecommendationListByUserId(int UserId)
-        {
+        public List<Recommendation> GetRecommendationListByUserId(int UserId) {
             using (VideoStoreEntityModelContainer lContainer = new VideoStoreEntityModelContainer())
             {
                 lContainer.ContextOptions.LazyLoadingEnabled = false;
-                List<Media> Result = new List<Media>();
-                var pUser = lContainer.Users.Include("Medium").FirstOrDefault(lUser => lUser.Id == UserId );
+                List<Recommendation> Result = new List<Recommendation>();
+                var pUser = lContainer.Users.Include("Medium").FirstOrDefault(lUser => lUser.Id == UserId);
                 //get the media list of this user
                 List<Media> pMediaOfUser = pUser.Medium.ToList();
-                                
-                foreach(Media pMedia in pMediaOfUser){
+
+                foreach (Media pMedia in pMediaOfUser)
+                {
                     Recommendation pRecommendation = lContainer.Recommendations.Include("MostLikeMatching").FirstOrDefault(lRecommendation => lRecommendation.Medium.Id == pMedia.Id);
                     //for every media, find the binded recommendation and find the most frequent LikeMatching binded to it
                     LikeMatching tLikeMatching = pRecommendation.MostLikeMatching;
-                    tLikeMatching = lContainer.LikeMatchings.Include("Medium").FirstOrDefault( lLikeMatching => lLikeMatching.Id == tLikeMatching.Id );
+                    pRecommendation.MostLikeMatching = lContainer.LikeMatchings.Include("Medium").FirstOrDefault(lLikeMatching => lLikeMatching.Id == tLikeMatching.Id);
                     //add the media binded with this LikeMatching to the Media List
-                    if (tLikeMatching != null && tLikeMatching.Medium != null) {
-                        Result.Add(tLikeMatching.Medium);
+                    if (tLikeMatching != null && tLikeMatching.Medium != null)
+                    {
+                        Result.Add(pRecommendation);
                     }
                     tLikeMatching = null;
                 }
 
                 return this.RipResultList(Result, pMediaOfUser);
             }
-            
         }
+
 
         private LikeMatching GetLikeMatchingMediaIn(Media pMedia, List<LikeMatching> LikeMatchingList)
         {
@@ -279,5 +278,76 @@ namespace VideoStore.Business.Components
             return OriginalList;
         }
 
+        private List<Recommendation> RipResultList(List<Recommendation> OriginalList , List<Media> pMediaOfUser) { 
+            List<Recommendation> tList = new List<Recommendation>();
+            //remove the duplicated ones
+            OriginalList.Sort(
+                delegate(Recommendation a, Recommendation b)
+                {
+                    int xdiff = a.MostLikeMatching.Medium.Id.CompareTo(b.MostLikeMatching.Medium.Id);
+                    if (xdiff != 0) { return xdiff; }
+                    else { return a.MostLikeMatching.Medium.Id.CompareTo(b.MostLikeMatching.Medium.Id); }
+                }
+            );
+            int ResultCount = OriginalList.Count;
+
+            if (ResultCount != 0)
+            {
+                tList.Add(OriginalList[0]);
+            }
+            for (int i = 1; i < ResultCount; i++)
+            {
+                if (OriginalList[i - 1].MostLikeMatching.Medium.Id != OriginalList[i].MostLikeMatching.Medium.Id)
+                {
+                    tList.Add(OriginalList[i]);
+                }
+            }
+            OriginalList = tList;
+            tList = new List<Recommendation>();
+            var tIdList = new List<int>();//store the media Id duplicates the media in user's like_list
+
+            //remove the recommended media that the user has already liked
+            int pMediaOfUserCount = pMediaOfUser.Count;
+            for (int i = 0; i < pMediaOfUserCount;i++)
+            {
+                for (int j = 0; j < OriginalList.Count; j++)
+                {
+                    if (pMediaOfUser[i].Id == OriginalList[j].MostLikeMatching.Medium.Id)
+                    {
+                        tIdList.Add(OriginalList[j].MostLikeMatching.Medium.Id);
+                    }
+                }
+            }
+
+            bool dupFlag = false;
+            foreach (Recommendation m in OriginalList)
+            {
+                foreach (int id in tIdList)
+                {
+                    if (id == m.MostLikeMatching.Medium.Id)
+                    {
+                        dupFlag = true;
+                    }
+                }
+                if (!dupFlag)
+                {
+                    tList.Add(m);
+                }
+                dupFlag = false;
+            }
+
+            OriginalList = tList;
+
+            OriginalList.Sort(
+                delegate(Recommendation a, Recommendation b)
+                {
+                    int xdiff = -1*a.MostLikeMatching.count.CompareTo(b.MostLikeMatching.count);//-1 makes the sorting in descending order
+                    if (xdiff != 0) { return xdiff; }
+                    else { return -1*a.MostLikeMatching.count.CompareTo(b.MostLikeMatching.count); }
+                }
+                );
+
+            return OriginalList;
+        }
     }
 }

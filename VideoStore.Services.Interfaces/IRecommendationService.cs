@@ -16,6 +16,6 @@ namespace VideoStore.Services.Interfaces
         void UserLikeMedia(int pUserId, int pMediaId);
 
         [OperationContract]
-        List<Media> GetRecommendationListByUserId(int UserId);
+        List<Recommendation> GetRecommendationListByUserId(int UserId);
     }
 }

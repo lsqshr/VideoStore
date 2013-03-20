@@ -22,8 +22,6 @@ namespace VideoStore.WebClient.ViewModels
 
         }
 
-
-
         public List<Media> MediaListPage
         {
             get

@@ -17,6 +17,9 @@ namespace VideoStore.Services.Interfaces
         User ReadUserById(int pUserId);
 
         [OperationContract]
+        User ReadUserByName(string pUserName);
+
+        [OperationContract]
         void UpdateUser(User pUser);
 
         [OperationContract]

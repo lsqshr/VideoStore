@@ -220,6 +220,8 @@ C:\Users\Matt\Desktop\VideoStoreWithRolesS12012(2)\VideoStoreWithRolesS12012\Vid
 C:\Users\Matt\Desktop\VideoStoreWithRolesS12012(2)\VideoStoreWithRolesS12012\VideoStore.WebClient\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Matt\Desktop\VideoStoreWithRolesS12012(2)\VideoStoreWithRolesS12012\VideoStore.WebClient\obj\Debug\VideoStore.WebClient.dll
 C:\Users\Matt\Desktop\VideoStoreWithRolesS12012(2)\VideoStoreWithRolesS12012\VideoStore.WebClient\obj\Debug\VideoStore.WebClient.pdb
+C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.WebClient\bin\System.Web.dll
+C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.WebClient\obj\Debug\VideoStore.WebClient.csprojResolveAssemblyReference.cache
 C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.WebClient\bin\VideoStore.WebClient.dll
 C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.WebClient\bin\VideoStore.WebClient.pdb
 C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.WebClient\bin\Common.dll
@@ -241,7 +243,6 @@ C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.WebClient\bin\Syst
 C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.WebClient\bin\System.ServiceModel.dll
 C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.WebClient\bin\System.Web.Abstractions.dll
 C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.WebClient\bin\System.Web.ApplicationServices.dll
-C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.WebClient\bin\System.Web.dll
 C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.WebClient\bin\System.Web.DynamicData.dll
 C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.WebClient\bin\System.Web.Entity.dll
 C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.WebClient\bin\System.Web.Extensions.dll
@@ -254,6 +255,5 @@ C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.WebClient\bin\Vide
 C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.WebClient\bin\Common.pdb
 C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.WebClient\bin\VideoStore.Business.Entities.pdb
 C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.WebClient\bin\System.Web.Mvc.xml
-C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.WebClient\obj\Debug\VideoStore.WebClient.csprojResolveAssemblyReference.cache
 C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.WebClient\obj\Debug\VideoStore.WebClient.dll
 C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\VideoStore.WebClient\obj\Debug\VideoStore.WebClient.pdb

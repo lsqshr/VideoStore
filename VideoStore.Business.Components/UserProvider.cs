@@ -32,6 +32,27 @@ namespace VideoStore.Business.Components
             }
         }
 
+        public User ReadUserByName(string pUserName) {
+            using (VideoStoreEntityModelContainer lContainer = new VideoStoreEntityModelContainer())
+            {
+                var lCredentials = from lCredential in lContainer.LoginCredentials
+                                   where lCredential.UserName == pUserName
+                                   select lCredential;
+
+                if (lCredentials.Count() > 0)
+                {
+                    LoginCredential lCredential = lCredentials.First();
+                    var lUsers = from lCustomer in lContainer.Users
+                                 where lCustomer.LoginCredential.Id == lCredential.Id
+                                 select lCustomer;
+                    if (lUsers.Count() > 0)
+                    {
+                        return lUsers.First();
+                    }
+                }
+                return null;
+            }
+        }
 
         public void UpdateUser(User pUser)
         {

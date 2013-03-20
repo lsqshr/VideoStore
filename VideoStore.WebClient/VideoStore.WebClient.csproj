@@ -147,6 +147,11 @@
     </Compile>
     <Compile Include="CustomMembership\MembershipProvider.cs" />
     <Compile Include="LoggedInCustomerBinder.cs" />
+    <Compile Include="Service References\RecommendationService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\AccountModels.cs" />
     <Compile Include="ViewModels\Cart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -179,6 +184,7 @@
     <None Include="Properties\DataSources\System.Web.Security.MembershipUser.datasource" />
     <None Include="Properties\DataSources\VideoStore.Business.Entities.Customer.datasource" />
     <None Include="Properties\DataSources\VideoStore.Business.Entities.Media.datasource" />
+    <None Include="Properties\DataSources\VideoStore.Business.Entities.Recommendation.datasource" />
     <None Include="Properties\DataSources\VideoStore.Business.Entities.Role.datasource" />
     <None Include="Properties\DataSources\VideoStore.Business.Entities.User.datasource" />
     <None Include="Service References\CatalogueService\service.wsdl" />
@@ -203,6 +209,16 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\RecommendationService\service.wsdl" />
+    <None Include="Service References\RecommendationService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RecommendationService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RecommendationService\VideoStore.Business.Entities.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\RoleService\service.wsdl" />
     <None Include="Service References\RoleService\service.xsd">
       <SubType>Designer</SubType>
@@ -222,6 +238,12 @@
     <None Include="Service References\RoleService\configuration91.svcinfo" />
     <None Include="Service References\RoleService\configuration.svcinfo" />
     <None Include="Service References\RoleService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\RecommendationService\configuration91.svcinfo" />
+    <None Include="Service References\RecommendationService\configuration.svcinfo" />
+    <None Include="Service References\RecommendationService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -308,6 +330,7 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\CatalogueService\" />
     <WCFMetadataStorage Include="Service References\OrderService\" />
+    <WCFMetadataStorage Include="Service References\RecommendationService\" />
     <WCFMetadataStorage Include="Service References\RoleService\" />
     <WCFMetadataStorage Include="Service References\UserService\" />
   </ItemGroup>

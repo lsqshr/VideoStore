@@ -30,6 +30,9 @@ namespace VideoStore.Services
             return UserProvider.ReadUserById(pUserId);
         }
 
+        public Business.Entities.User ReadUserByName(string pUserName) {
+            return UserProvider.ReadUserByName(pUserName);
+        }
 
         public void UpdateUser(Business.Entities.User pUser)
         {

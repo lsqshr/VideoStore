@@ -33,4 +33,3 @@ C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\Common\bin\Debug\Common.dll
 C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\Common\bin\Debug\Common.pdb
 C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\Common\obj\Debug\Common.dll
 C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\Common\obj\Debug\Common.pdb
-C:\Users\siqi\Dropbox\VideoStoreWithRolesS12012(3)\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache

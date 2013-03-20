@@ -12,6 +12,8 @@ namespace VideoStore.Business.Components.Interfaces
 
         User ReadUserById(int pUserId);
 
+        User ReadUserByName(string pUserName);
+
         void UpdateUser(User pUser);
 
         void DeleteUser(User pUser);

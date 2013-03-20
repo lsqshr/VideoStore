@@ -23,7 +23,7 @@ namespace VideoStore.Services
             this.RecommendationProvider.UserLikeAnMedia(pUserId, pMediaId);
         }
 
-        public List<Media> GetRecommendationListByUserId(int UserId)
+        public List<Recommendation> GetRecommendationListByUserId(int UserId)
         {
             return this.RecommendationProvider.GetRecommendationListByUserId(UserId);
         }
