@@ -16,6 +16,7 @@ namespace VideoStore.WebClient.ViewModels
 
         }
 
+        // a list of Recommendations to be rendered on the ->GET: /Recommendation/Index
         public Recommendation[] RecommendationListPage
         {
             get
@@ -28,10 +29,15 @@ namespace VideoStore.WebClient.ViewModels
             }
         }
 
+        /* Deal with the Like button on /Store/ListMedia. It triggers a bunch of operations 
+           taken to put the media in user's like list & update the statistic data
+         */
         public void LikeMedia(int MediaId)
         {
             this.RecommendationService.UserLikeMedia(this.pUserId, MediaId);
         }
+
+        public int pUserId { get; set; }
 
         private RecommendationService.RecommendationServiceClient RecommendationService {
             get 
@@ -46,7 +52,5 @@ namespace VideoStore.WebClient.ViewModels
                 return new UserService.UserServiceClient();
             }
         }
-
-        public int pUserId { get; set; }
     }
 }

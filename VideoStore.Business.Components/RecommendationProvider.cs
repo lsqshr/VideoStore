@@ -181,6 +181,7 @@ namespace VideoStore.Business.Components
                 lContainer.ContextOptions.LazyLoadingEnabled = false;
                 List<Recommendation> Result = new List<Recommendation>();
                 var pUser = lContainer.Users.Include("Medium").FirstOrDefault(lUser => lUser.Id == UserId);
+                
                 //get the media list of this user
                 List<Media> pMediaOfUser = pUser.Medium.ToList();
 
@@ -209,7 +210,7 @@ namespace VideoStore.Business.Components
             }
         }
 
-
+        /* simply return a LikeMatching object which matches to the given media */
         private LikeMatching GetLikeMatchingMediaIn(Media pMedia, List<LikeMatching> LikeMatchingList)
         {
             foreach (LikeMatching pLikeMatching in LikeMatchingList)
@@ -222,6 +223,14 @@ namespace VideoStore.Business.Components
             return null;
         }
 
+        /* ABANDONED!
+         * 
+         * removes duplicated & already liked tuples from the raw list 
+         * @returns a List of Media that are going to be rendered as recommended
+            Note for eliminate duplication: To remove the duplicated ones, I sort the raw list firstly and compare l[i-1] and l[i] 
+         *  to see if they are the same one.
+         *  
+         */
         private List<Media> RipResultList(List<Media> OriginalList, List<Media> pMediaOfUser) {
             List<Media> tList = new List<Media>();
             //remove the duplicated ones
@@ -285,6 +294,15 @@ namespace VideoStore.Business.Components
             return OriginalList;
         }
 
+        /* CURRENTLY USING
+         * 
+         * removes duplicated & already liked tuples from the raw list 
+         * @returns a List of Recommendations( Composite both the media to be recommemded 
+         * & where recommendation from(media user has already liked) )
+            Note for eliminate duplication: To remove the duplicated ones, I sort the raw list firstly and compare l[i-1] and l[i] 
+         *  to see if they are the same one.
+         *  
+         */
         private List<Recommendation> RipResultList(List<Recommendation> OriginalList , List<Media> pMediaOfUser) { 
             List<Recommendation> tList = new List<Recommendation>();
             //remove the duplicated ones
