@@ -17,16 +17,43 @@
     
         <tr>
             <td>
-                <%: item.Title %>
-                Price: $<%: item.Price %>
+                <%: item.pMedia.Title %>
+                Price: $<%: item.pMedia.Price %>
 
-
+                <span>
                 <% using(Html.BeginForm("AddToCart", "Cart")) { %>
-                    <%= Html.Hidden("pMediaId", item.Id) %>
+                    <%= Html.Hidden("pMediaId", item.pMedia.Id) %>
                     <%= Html.Hidden("pReturnUrl", ViewContext.HttpContext.Request.Url.PathAndQuery) %>
                     
                     <input type="submit" value="+ Add to Cart" />
                 <%} %>
+                </span>
+                
+            </td>
+            <td>
+            <style>
+                    .like
+                    {
+                        float:right;   
+                     }
+                </style>
+                <%-- when the media is not in the user's like list, render the 'Like' button
+                    else: render just text 'Liked'
+                   --%>
+                <%if (!item.Liked)
+                  { %>
+                    <span class="like"><% using (Html.BeginForm("Like", "Recommendation"))
+                             { %>
+                        <%= Html.Hidden("pMediaId", item.pMedia.Id)%>
+                        <%= Html.Hidden("pReturnUrl", Url.Action("ListMedia", "Store"))%>
+                        <input type="submit" value="Like" />
+                        <%} %>
+                    </span>
+                   <% }
+                  else
+                  { %>
+                  <span class="like">Liked</span>
+                   <% } %>
             </td>
         </tr>
     

@@ -11,5 +11,6 @@ namespace VideoStore.Business.Components.Interfaces
         List<Business.Entities.Media> GetMediaItems(int pOffset, int pCount);
         Media GetMediaById(int pId);
         List<Media> GetMediumUserLikes(int pUserId);
+        bool IsMediaLikedByUser(Media pMedia,User pUser);
     }
 }

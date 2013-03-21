@@ -31,5 +31,10 @@ namespace VideoStore.Services
             return CatalogueProvider.GetMediaById(pId);
         }
 
+        public bool IsMediaLikedByUser(Media pMedia,User pUser)
+        {
+            return CatalogueProvider.IsMediaLikedByUser(pMedia,pUser);
+        }
+
     }
 }

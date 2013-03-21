@@ -13,7 +13,6 @@ namespace VideoStore.WebClient.ViewModels
         {
             User pUser = this.UserService.ReadUserByName(pUserName);
             this.pUserId = pUser.Id;
-            this.test = "hi";
 
         }
 
@@ -29,14 +28,9 @@ namespace VideoStore.WebClient.ViewModels
             }
         }
 
-        public void LikeMedia(int MediaId) {
-            this.RecommendationService.UserLikeMedia(this.pUserId, MediaId);
-        }
-
-        public string test
+        public void LikeMedia(int MediaId)
         {
-            get;
-            set;
+            this.RecommendationService.UserLikeMedia(this.pUserId, MediaId);
         }
 
         private RecommendationService.RecommendationServiceClient RecommendationService {

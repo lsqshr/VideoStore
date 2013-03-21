@@ -17,9 +17,10 @@ namespace VideoStore.WebClient.Controllers
             return View();
         }
 
+        // GET:/Store/ListMedia
         public ActionResult ListMedia()
         {
-            return View(new CatalogueViewModel());
+            return View(new CatalogueViewModel(this.User.Identity.Name));
         }
 
     }

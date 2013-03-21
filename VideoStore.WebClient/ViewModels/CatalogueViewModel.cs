@@ -17,17 +17,60 @@ namespace VideoStore.WebClient.ViewModels
             }
         }
 
-        public CatalogueViewModel()
-        {
-
-        }
-
-        public List<Media> MediaListPage
+        private UserService.UserServiceClient UserService
         {
             get
             {
-                return CatalogueService.GetMediaItems(0, Int32.MaxValue);
+                return new UserService.UserServiceClient();
             }
         }
+
+        private bool IsMediaLikedByUser(Media pMedia) {
+            return this.CatalogueService.IsMediaLikedByUser(pMedia,CurrentUser);
+        }
+
+        private string UserName;
+
+        public CatalogueViewModel(string username)
+        {
+            this.UserName = username;
+        }
+
+        public class MediaWithLikeStatus 
+        {
+            public Media pMedia { get; set; }
+            public bool Liked{get;set;}
+            public MediaWithLikeStatus(Media pMedia,bool liked) {
+                this.Liked = liked;
+                this.pMedia = pMedia;
+            }
+        }
+
+        public List<MediaWithLikeStatus> MediaListPage
+        {
+            get
+            {
+                List<MediaWithLikeStatus> mwsList= new List<MediaWithLikeStatus>();
+                List<Media> mList = CatalogueService.GetMediaItems(0, Int32.MaxValue);
+                foreach(Media m in mList)
+                {
+                    if (IsMediaLikedByUser(m))
+                    {
+                        mwsList.Add(new MediaWithLikeStatus(m, true));
+                    }
+                    else {
+                        mwsList.Add(new MediaWithLikeStatus(m, false));
+                    }
+                }
+                return mwsList;
+            }
+        }
+
+        public User CurrentUser {
+            get {
+                return UserService.ReadUserByName(this.UserName);
+            }
+        }
+
     }
 }

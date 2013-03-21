@@ -37,9 +37,24 @@ namespace VideoStore.Business.Components
             using (TransactionScope lScope = new TransactionScope())
             using (VideoStoreEntityModelContainer lContainer = new VideoStoreEntityModelContainer())
             {
-                User pUser = lContainer.Users.Where((tUser) => tUser.Id == pUserId).FirstOrDefault();
+                User pUser = lContainer.Users.Include("Medium").Where((tUser) => tUser.Id == pUserId).FirstOrDefault();
+                lScope.Complete();
                 return pUser.Medium.ToList();
+
             }
         }
+
+        public bool IsMediaLikedByUser(Media pMedia, User pUser) { 
+            //get the medias this user liked before
+            List<Media> mList = this.GetMediumUserLikes(pUser.Id);
+            bool b =  false;
+            foreach(Media m in mList){
+                if (m.Id == pMedia.Id) {
+                    b = true;
+                }
+            }
+            return b;
+        }
+
     }
 }

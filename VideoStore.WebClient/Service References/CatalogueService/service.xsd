@@ -30,4 +30,19 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="IsMediaLikedByUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/VideoStore.Business.Entities" minOccurs="0" name="pMedia" nillable="true" type="q3:Media" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/VideoStore.Business.Entities" minOccurs="0" name="pUser" nillable="true" type="q4:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsMediaLikedByUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsMediaLikedByUserResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

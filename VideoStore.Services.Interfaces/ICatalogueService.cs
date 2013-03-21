@@ -15,5 +15,8 @@ namespace VideoStore.Services.Interfaces
 
         [OperationContract]
         Media GetMediaById(int pId);
+
+        [OperationContract]
+        bool IsMediaLikedByUser(Media pMedia , User pUser);
     }
 }

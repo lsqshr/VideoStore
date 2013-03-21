@@ -187,15 +187,22 @@ namespace VideoStore.Business.Components
                 foreach (Media pMedia in pMediaOfUser)
                 {
                     Recommendation pRecommendation = lContainer.Recommendations.Include("MostLikeMatching").FirstOrDefault(lRecommendation => lRecommendation.Medium.Id == pMedia.Id);
-                    //for every media, find the binded recommendation and find the most frequent LikeMatching binded to it
-                    LikeMatching tLikeMatching = pRecommendation.MostLikeMatching;
-                    pRecommendation.MostLikeMatching = lContainer.LikeMatchings.Include("Medium").FirstOrDefault(lLikeMatching => lLikeMatching.Id == tLikeMatching.Id);
-                    //add the media binded with this LikeMatching to the Media List
-                    if (tLikeMatching != null && tLikeMatching.Medium != null)
-                    {
-                        Result.Add(pRecommendation);
+                    if( pRecommendation != null ){
+                        //for every media, find the binded recommendation and find the most frequent LikeMatching binded to it
+                        LikeMatching tLikeMatching = pRecommendation.MostLikeMatching;
+                        if (tLikeMatching != null)
+                        {
+                            pRecommendation.MostLikeMatching = lContainer.LikeMatchings.Include("Medium")
+                                                                   .Where(lLikeMatching => lLikeMatching.Id == tLikeMatching.Id)
+                                                                   .FirstOrDefault();
+                            //add the media binded with this LikeMatching to the Media List
+                            if (tLikeMatching != null && tLikeMatching.Medium != null)
+                            {
+                                Result.Add(pRecommendation);
+                            }
+                            tLikeMatching = null;
+                        }
                     }
-                    tLikeMatching = null;
                 }
 
                 return this.RipResultList(Result, pMediaOfUser);
